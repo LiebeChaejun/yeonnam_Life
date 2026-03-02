@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #f6f3ee;
+  --color-bg-card: #ffffff;
+  --color-bg-warm: #ede8e0;
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #7a7a7a;
+  --color-text-muted: #a8a8a8;
+  --color-accent: #8b6f47;
+  --color-accent-light: #b8a080;
+  --color-accent-warm: #c4956a;
+  --color-border: #e5e0d8;
+  --color-cafe: #8b6f47;
+  --color-restaurant: #c75b3f;
+  --color-bakery: #c4956a;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-full: 999px;
+}
