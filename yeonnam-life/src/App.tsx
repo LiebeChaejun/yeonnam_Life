@@ -3,8 +3,10 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-[#F6F3EE] justify-items-center content-center">
-      <Home />
+    <div className="w-full h-full bg-bg justify-items-center py-5 px-3">
+      <div className="w-[500px] h-full">
+        <Home />
+      </div>
     </div>
   );
 }
