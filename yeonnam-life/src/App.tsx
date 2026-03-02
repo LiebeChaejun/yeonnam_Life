@@ -1,13 +1,16 @@
 import Home from "./pages/home/Home";
+// import Place from "./pages/place/Place";
 import "./App.css";
 
 function App() {
   return (
-    <div className="w-full h-full bg-bg justify-items-center py-5 px-3">
-      <div className="w-[500px] h-full">
-        <Home />
+    <>
+      <div className="bg-bg w-full min-h-screen flex justify-center">
+        <div className="w-125 py-5 px-3">
+          <Home />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
