@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="flex flex-col gap-10 px-15 py-5">
+    <div className="flex flex-col gap-3 px-5 py-5">
       {/* 캐러샐 */}
       <div className="bg-black w-full h-70 rounded-2xl"></div>
 
