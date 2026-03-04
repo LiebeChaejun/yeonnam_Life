@@ -1,4 +1,5 @@
 import React from "react";
+import CategoryBox from "../../components/categoryBox/CategoryButton";
 
 const Map = () => {
   return (
@@ -8,18 +9,10 @@ const Map = () => {
 
         {/* 카테고리 선택 목록 */}
         <ul className="flex gap-2">
-          <li className="bg-bg-card rounded-full px-3 py-2 text-text-secondary border-2 border-bg-warm">
-            ✨ 전체
-          </li>
-          <li className="bg-accent rounded-full px-3 py-2 text-white border-2 border-bg-warm">
-            ☕️ 카페
-          </li>
-          <li className="bg-bg-card rounded-full px-3 py-2 text-text-secondary border-2 border-bg-warm">
-            🍽️ 맛집
-          </li>
-          <li className="bg-bg-card rounded-full px-3 py-2 text-text-secondary border-2 border-bg-warm">
-            🥐 베이커리
-          </li>
+          <CategoryBox isButton={true} />
+          <CategoryBox isButton={true} shop="cafe" />
+          <CategoryBox isButton={true} shop="bakery" />
+          <CategoryBox isButton={true} shop="restaurant" />
         </ul>
 
         {/* 지도 보여줄 곳 */}

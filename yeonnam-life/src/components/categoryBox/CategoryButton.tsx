@@ -1,11 +1,12 @@
 import React from "react";
 
 interface Category {
-  shop: string;
+  isButton: boolean;
+  shop?: string;
 }
 
-const CategoryButton = ({ shop }: Category) => {
-  let label = "기타";
+const CategoryBox = ({ isButton, shop }: Category) => {
+  let label = "✨ 전체";
   if (shop === "bakery") {
     label = "🥐 베이커리";
   } else if (shop === "restaurant") {
@@ -14,13 +15,21 @@ const CategoryButton = ({ shop }: Category) => {
     label = "☕️ 카페";
   }
 
-  return (
-    <>
-      <button className="bg-bg-warm text-accent-warm rounded-2xl px-2 py-1">
+  if (isButton === true) {
+    return (
+      <li className="bg-bg-card rounded-full px-3 py-2 text-text-secondary border-2 border-bg-warm">
         {label}
-      </button>
-    </>
-  );
+      </li>
+    );
+  } else {
+    return (
+      <>
+        <button className="bg-bg-warm text-accent-warm rounded-2xl px-2 py-1">
+          {label}
+        </button>
+      </>
+    );
+  }
 };
 
-export default CategoryButton;
+export default CategoryBox;

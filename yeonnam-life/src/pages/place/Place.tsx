@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryButton from "../../components/categoryBox/CategoryButton";
+import CategoryBox from "../../components/categoryBox/CategoryButton";
 
 const Place = () => {
   return (
@@ -23,7 +23,7 @@ const Place = () => {
 
         {/* 카테고리 태그 */}
         <div className="px-3 py-2 text-xs flex gap-1">
-          <CategoryButton shop="bakery" />
+          <CategoryBox isButton={false} shop="bakery" />
         </div>
 
         {/* 컨텐츠 내용 */}
