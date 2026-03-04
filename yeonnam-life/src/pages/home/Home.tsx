@@ -1,3 +1,5 @@
+import CategoryCard from "../../components/home/category/CategoryCard";
+
 const Home = () => {
   return (
     <div className="flex flex-col gap-3 px-5 py-5">
@@ -7,23 +9,12 @@ const Home = () => {
       {/* 카테고리 박스*/}
       <div className="flex flex-col gap-3 w-full">
         <h2 className="text-xl font-bold">어디로 떠날까요?</h2>
-        <div className="flex gap-3">
+        <div className="flex gap-3 overflow-x-scroll">
           {/* 카테고리 */}
-          <div className="bg-bg-card w-33 h-33 rounded-2xl flex flex-col justify-center items-center">
-            <p className="text-4xl">☕️</p>
-            <p className="text-base font-semibold">카페</p>
-            <p className="text-xs text-text-muted">3곳</p>
-          </div>
-          <div className="bg-bg-card w-33 h-33 rounded-2xl flex flex-col justify-center items-center">
-            <p className="text-4xl">🍽️</p>
-            <p className="text-base font-semibold">맛집</p>
-            <p className="text-xs text-text-muted">3곳</p>
-          </div>
-          <div className="bg-bg-card w-33 h-33 rounded-2xl flex flex-col justify-center items-center">
-            <p className="text-4xl">🥐</p>
-            <p className="text-base font-semibold">베이커리</p>
-            <p className="text-xs text-text-muted">3곳</p>
-          </div>
+          <CategoryCard />
+          <CategoryCard shop="cafe" />
+          <CategoryCard shop="restaurant" />
+          <CategoryCard shop="bakery" />
         </div>
       </div>
 
