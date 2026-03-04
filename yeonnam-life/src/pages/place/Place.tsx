@@ -1,4 +1,5 @@
 import React from "react";
+import CategoryButton from "../../components/categoryBox/CategoryButton";
 
 const Place = () => {
   return (
@@ -22,9 +23,7 @@ const Place = () => {
 
         {/* 카테고리 태그 */}
         <div className="px-3 py-2 text-xs flex gap-1">
-          <p className="bg-bg-warm text-accent-warm rounded-2xl px-2 py-1">
-            🥐베이커리
-          </p>
+          <CategoryButton shop="bakery" />
         </div>
 
         {/* 컨텐츠 내용 */}
