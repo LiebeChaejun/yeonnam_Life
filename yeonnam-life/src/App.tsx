@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className="bg-bg w-full min-h-screen flex justify-center">
-        <div className="w-125">
+        <div className="max-w-125 min-w-100">
           <Home />
         </div>
       </div>
