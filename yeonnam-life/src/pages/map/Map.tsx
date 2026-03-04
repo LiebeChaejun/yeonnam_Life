@@ -2,8 +2,8 @@ import React from "react";
 
 const Map = () => {
   return (
-    <div className="relative flex flex-col gap-3">
-      <div className="sticky flex flex-col gap-3 bg-bg z-2 w-125 top-0 py-5">
+    <div className="relative flex flex-col gap-3 px-5">
+      <div className="sticky flex flex-col gap-3 bg-bg z-2 top-0 py-5">
         <h2 className="text-2xl font-bold">연남동 지도</h2>
 
         {/* 카테고리 선택 목록 */}
