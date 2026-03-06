@@ -1,6 +1,6 @@
 import React from "react";
 
-const Course = () => {
+const CourseCard = () => {
   return (
     <>
       <li className="flex gap-2">
@@ -38,4 +38,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default CourseCard;
