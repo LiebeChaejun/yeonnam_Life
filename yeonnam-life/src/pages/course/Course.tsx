@@ -3,7 +3,7 @@ import CourseCard from "../../components/course/CourseCard";
 
 const Course = () => {
   return (
-    <div className="flex flex-col gap-3 py-3 px-3">
+    <div className="flex flex-col gap-3">
       <div className="flex">
         <p>(뒤로가기)</p>
         <h2 className="text-xl font-semibold">산책 코스</h2>
