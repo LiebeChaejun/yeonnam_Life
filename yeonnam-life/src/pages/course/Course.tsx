@@ -1,4 +1,5 @@
 import React from "react";
+import CourseCard from "../../components/course/CourseCard";
 
 const Course = () => {
   return (
@@ -33,8 +34,8 @@ const Course = () => {
         {/* 코스별 장소 목룍*/}
         <ul className="flex flex-col gap-5">
           {/* 코스별 장소 */}
-          <Course />
-          <Course />
+          <CourseCard />
+          <CourseCard />
 
           <li className="flex gap-2">
             <div className="flex flex-col gap-1 justify-center">
