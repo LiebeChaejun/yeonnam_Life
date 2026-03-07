@@ -9,7 +9,7 @@ const Home = () => {
       {/* 카테고리 박스*/}
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">어디로 떠날까요?</h2>
-        <div className="flex gap-3 max-w-94 overflow-x-scroll">
+        <div className="flex gap-3 max-w-100 overflow-x-scroll">
           {/* 카테고리 */}
           <CategoryCard />
           <CategoryCard shop="cafe" />
@@ -24,7 +24,7 @@ const Home = () => {
           <h2 className="text-xl font-bold">추천 산책코스</h2>
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
-        <div className="flex gap-3 max-w-94 overflow-x-scroll">
+        <div className="flex gap-3 max-w-100 overflow-x-scroll">
           <div className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5">
             <p className="text-3xl">☕️</p>
             <div className="flex flex-col">
