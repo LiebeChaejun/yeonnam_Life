@@ -3,7 +3,7 @@ import CategoryBox from "../../components/categoryBox/CategoryButton";
 
 const Place = () => {
   return (
-    <div className="flex flex-col gap-5">
+    <>
       {/* 뒤로가기 버튼 */}
       <div className="flex gap-3">
         <button>image</button>
@@ -44,7 +44,7 @@ const Place = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

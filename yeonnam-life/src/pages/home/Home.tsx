@@ -2,14 +2,14 @@ import CategoryCard from "../../components/home/category/CategoryCard";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-3 px-5 py-5">
+    <>
       {/* 캐러샐 */}
-      <div className="bg-black w-full h-70 rounded-2xl"></div>
+      <div className="bg-black h-70 rounded-2xl"></div>
 
       {/* 카테고리 박스*/}
-      <div className="flex flex-col gap-3 w-full">
+      <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">어디로 떠날까요?</h2>
-        <div className="flex gap-3 overflow-x-scroll">
+        <div className="flex gap-3 max-w-94 overflow-x-scroll">
           {/* 카테고리 */}
           <CategoryCard />
           <CategoryCard shop="cafe" />
@@ -19,12 +19,12 @@ const Home = () => {
       </div>
 
       {/* 추천 산책코스 */}
-      <div className="flex flex-col gap-3 w-full">
+      <div className="flex flex-col gap-3">
         <div className="flex justify-between">
           <h2 className="text-xl font-bold">추천 산책코스</h2>
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
-        <div className="flex gap-3 overflow-x-scroll">
+        <div className="flex gap-3 max-w-94 overflow-x-scroll">
           <div className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5">
             <p className="text-3xl">☕️</p>
             <div className="flex flex-col">
@@ -71,7 +71,7 @@ const Home = () => {
       <div>
         <h2>인기 장소🔥</h2>
         <div className="flex flex-col gap-3">
-          <div className="bg-bg-card w-full h-16 rounded-2xl flex items-center justify-between px-3">
+          <div className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
             <div className="flex items-center gap-3">
               <p className="text-2xl">🍞</p>
               <div>
@@ -83,7 +83,7 @@ const Home = () => {
             </div>
             <p className="justify-self-end">별점</p>
           </div>
-          <div className="bg-bg-card w-full h-16 rounded-2xl flex items-center justify-between px-3">
+          <div className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
             <div className="flex items-center gap-3">
               <p className="text-2xl">🍕</p>
               <div>
@@ -95,7 +95,7 @@ const Home = () => {
             </div>
             <p className="justify-self-end">별점</p>
           </div>
-          <div className="bg-bg-card w-full h-16 rounded-2xl flex items-center justify-between px-3">
+          <div className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
             <div className="flex items-center gap-3">
               <p className="text-2xl">☕️</p>
               <div>
@@ -109,7 +109,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
