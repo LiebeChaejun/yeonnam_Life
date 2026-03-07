@@ -1,15 +1,11 @@
 import React from "react";
-import CourseCard from "../../components/course/CourseCard";
+import CourseCard from "./CourseCard";
+import Clock from "../img/iconClock.svg";
+import Walking from "../img/iconWalking.svg";
 
 const Course = () => {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex">
-        <p>(뒤로가기)</p>
-        <h2 className="text-xl font-semibold">산책 코스</h2>
-      </div>
-
-      {/* 코스 설명 박스 */}
+    <>
       <div className="flex flex-col bg-cafe w-full h-50 rounded-2xl gap-3 justify-center px-5">
         <p className="text-4xl">☕️</p>
         <div>
@@ -21,11 +17,13 @@ const Course = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <div>
-            <p className="text-white text-base font-light">시간</p>
+          <div className="flex gap-1">
+            <img src={Clock} alt="" className="w-4 h-4" />
+            <p className="text-white text-xs font-light">약 2시간</p>
           </div>
-          <div>
-            <p className="text-white text-base font-light">거리</p>
+          <div className="flex gap-1">
+            <img src={Walking} alt="" className="w-4 h-4" />
+            <p className="text-white font-light text-xs">거리</p>
           </div>
         </div>
       </div>
@@ -39,7 +37,7 @@ const Course = () => {
           <CourseCard />
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 
