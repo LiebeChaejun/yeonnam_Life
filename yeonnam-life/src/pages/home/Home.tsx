@@ -1,10 +1,13 @@
+import Carousel from "../../components/home/carousel/Carousel";
+import CourseCard from "../../components/course/CourseCard";
 import CategoryCard from "../../components/home/category/CategoryCard";
+import PlaceCard from "../../components/place/PlaceCard";
 
 const Home = () => {
   return (
     <>
       {/* 캐러샐 */}
-      <div className="bg-black h-70 rounded-2xl"></div>
+      <Carousel />
 
       {/* 카테고리 박스*/}
       <div className="flex flex-col gap-3">
@@ -25,65 +28,21 @@ const Home = () => {
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
         <div className="flex gap-3 max-w-100 overflow-x-scroll">
-          <div className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5">
-            <p className="text-3xl">☕️</p>
-            <div className="flex flex-col">
-              <p className="font-semibold text-base">연남 감성 카페 투어</p>
-              <p className="font-light text-sm">
-                커피 한 잔과 함께 걷는 연남의 오후
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <p className="text-sm font-light">시간</p>
-              <p className="text-sm font-light">거리</p>
-            </div>
-          </div>
-          <div className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5">
-            <p className="text-3xl">☕️</p>
-            <div className="flex flex-col">
-              <p className="font-semibold text-base">연남 감성 카페 투어</p>
-              <p className="font-light text-sm">
-                커피 한 잔과 함께 걷는 연남의 오후
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <p className="text-sm font-light">시간</p>
-              <p className="text-sm font-light">거리</p>
-            </div>
-          </div>
-          <div className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5">
-            <p className="text-3xl">☕️</p>
-            <div className="flex flex-col">
-              <p className="font-semibold text-base">연남 감성 카페 투어</p>
-              <p className="font-light text-sm">
-                커피 한 잔과 함께 걷는 연남의 오후
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <p className="text-sm font-light">시간</p>
-              <p className="text-sm font-light">거리</p>
-            </div>
-          </div>
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
         </div>
       </div>
 
       {/* 인기장소 */}
       <div>
         <h2>인기 장소🔥</h2>
-        <div className="flex flex-col gap-3">
-          <div className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
-            <div className="flex items-center gap-3">
-              <p className="text-2xl">🍞</p>
-              <div>
-                <p className="font-semibold">밀도</p>
-                <p className="font-light text-sm">
-                  식빵 한 장의 행복, 연남 본점
-                </p>
-              </div>
-            </div>
-            <p className="justify-self-end">별점</p>
-          </div>
-          <div className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
+        <ul className="flex flex-col gap-3">
+          <PlaceCard isHome={true} />
+          <PlaceCard isHome={true} />
+          <PlaceCard isHome={true} />
+
+          {/* <div className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
             <div className="flex items-center gap-3">
               <p className="text-2xl">🍕</p>
               <div>
@@ -106,8 +65,8 @@ const Home = () => {
               </div>
             </div>
             <p className="justify-self-end">별점</p>
-          </div>
-        </div>
+          </div> */}
+        </ul>
       </div>
     </>
   );

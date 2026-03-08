@@ -1,50 +1,26 @@
 import React from "react";
-import HeartActive from "../img/heartActive.svg";
-import HeartEmpty from "../img/heartInactive.svg";
-import Star from "../img/star.svg";
+import iconClock from "../img/iconClockGrey.svg";
+import iconWalking from "../img/iconWalkingGrey.svg";
 
 const CourseCard = () => {
   return (
-    <>
-      <li className="flex gap-2">
-        <div className="flex flex-col gap-1 justify-center">
-          <div className="w-8 h-8 bg-cafe rounded-full flex items-center justify-center text-white font-semibold">
-            1
-          </div>
+    <div className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5">
+      <p className="text-3xl">☕️</p>
+      <div className="flex flex-col">
+        <p className="font-semibold text-base">연남 감성 카페 투어</p>
+        <p className="font-light text-sm">커피 한 잔과 함께 걷는 연남의 오후</p>
+      </div>
+      <div className="flex gap-3">
+        <div className="flex items-center gap-1">
+          <img src={iconClock} alt="" className="w-4 h-4" />
+          <p className="text-sm font-light">시간</p>
         </div>
-        <div className="relative flex gap-2 bg-bg-card w-full px-3 py-3 rounded-2xl items-center">
-          <p className="w-15 h-15 bg-bg-warm text-4xl rounded-xl flex justify-center items-center">
-            ☕️
-          </p>
-          <div>
-            <div className="flex gap-1">
-              <h4 className="text-xl font-medium">연남 살롱</h4>
-              <div className="p-1 rounded-full bg-bg-warm text-xs text-cafe content-center">
-                카페
-              </div>
-            </div>
-            <p className="text-sm text-text-muted w-50 mr-6">
-              빈티지 감성이 물씬 나는 드립커피 전문점
-            </p>
-            <div className="flex gap-2">
-              <div className="flex">
-                <img src={Star} alt="" className="w-4 h-4" />
-                <p className="text-xs text-[#FFC107]">4.9</p>
-              </div>
-              <p className="text-text-secondary text-xs">
-                서울 마포구 연남로 38
-              </p>
-            </div>
-          </div>
-          <img
-            src={HeartActive}
-            alt="활성화 된 하트"
-            className="absolute top-4 right-4"
-          />
-          {/* <div className="absolute top-4 right-4 text-2xl">❤️</div> */}
+        <div className="flex items-center gap-1">
+          <img src={iconWalking} alt="" className="w-4 h-4" />
+          <p className="text-sm font-light">거리</p>
         </div>
-      </li>
-    </>
+      </div>
+    </div>
   );
 };
 

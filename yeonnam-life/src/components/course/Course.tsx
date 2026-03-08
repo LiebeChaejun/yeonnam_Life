@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard from "./CourseCard";
+import PlaceCard from "../place/PlaceCard";
 import Clock from "../img/iconClock.svg";
 import Walking from "../img/iconWalking.svg";
 
@@ -32,9 +32,9 @@ const Course = () => {
         {/* 코스별 장소 목룍*/}
         <ul className="flex flex-col gap-5">
           {/* 코스별 장소 */}
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
+          <PlaceCard isHome={false} />
+          <PlaceCard isHome={false} />
+          <PlaceCard isHome={false} />
         </ul>
       </div>
     </>
