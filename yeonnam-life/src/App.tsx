@@ -1,15 +1,28 @@
-import Home from "./pages/home/Home";
-// import Place from "./pages/place/Place";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import CourseDetail from "./pages/courseDetail/CourseDetail";
+import PlaceDetail from "./pages/placeDetail/PlaceDetail";
+import MapDetail from "./pages/mapDetail/MapDetail";
 
 function App() {
   return (
     <>
-      <div className="bg-bg w-full min-h-screen flex justify-center">
-        <div className="w-125 py-5 px-3">
-          <Home />
+      <BrowserRouter>
+        <div className="bg-bg w-full min-h-screen flex justify-center">
+          <div className="max-w-125 min-w-100">
+            <div className="relative flex flex-col gap-3 px-3 py-3">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/course" element={<CourseDetail />} />
+                <Route path="/place" element={<PlaceDetail />} />
+                <Route path="/course" element={<CourseDetail />} />
+                <Route path="/map" element={<MapDetail />} />
+              </Routes>
+            </div>
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     </>
   );
 }
