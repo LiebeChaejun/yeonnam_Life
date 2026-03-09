@@ -1,13 +1,20 @@
 import React from "react";
 import CategoryBox from "../../components/categoryBox/CategoryButton";
+import backArrow from "../../components/img/backArrow.svg";
+import heart from "../../components/img/heartInactive.svg";
+import star from "../../components/img/star.svg";
+import clock from "../../components/img/iconClockGrey.svg";
+import location from "../../components/img/icon-location-gray.svg";
 
-const Place = () => {
+const PlaceDetail = () => {
   return (
     <>
       {/* 뒤로가기 버튼 */}
       <div className="flex gap-3">
-        <button>image</button>
-        <p>장소 상세</p>
+        <button>
+          <img src={backArrow} alt="" />
+        </button>
+        <p className="font-semibold">장소 상세</p>
       </div>
 
       {/* 사진 담는 곳 */}
@@ -18,11 +25,11 @@ const Place = () => {
       {/* 컨텐츠 */}
       <div className="relative h-75 flex flex-col gap-3">
         <div className="absolute w-12 h-12 bg-bg-warm rounded-full right-0 top-2 flex justify-center items-center">
-          ❤️
+          <img src={heart} alt="" />
         </div>
 
         {/* 카테고리 태그 */}
-        <div className="px-3 py-2 text-xs flex gap-1">
+        <div className="py-2 text-xs flex gap-1">
           <CategoryBox isButton={false} shop="bakery" />
         </div>
 
@@ -31,9 +38,18 @@ const Place = () => {
           <h3 className="text-2xl text-text-primary">밀도</h3>
           <p className="text-text-secondary">식빵 한 장의 행복, 연남 본점</p>
           <ul className="h-30 bg-bg-warm rounded-2xl border border-border p-2 flex flex-col gap-3">
-            <li className="text-accent-warm">⭐️별점</li>
-            <li className="text-text-secondary">주소</li>
-            <li className="text-text-secondary">영업시간</li>
+            <li className="flex gap-1 items-center">
+              <img src={star} alt="" className="w-4 h-4" />
+              <p className="text-accent-warm">별점</p>
+            </li>
+            <li className="flex gap-1 items-center">
+              <img src={location} alt="" className="w-4 h-4" />
+              <p className="text-text-secondary">서울 마포구 연남로 13</p>
+            </li>
+            <li className="flex gap-1 items-center">
+              <img src={clock} alt="" className="w-4 h-4" />
+              <p className="text-text-secondary">영업 시간</p>
+            </li>
           </ul>
 
           {/* 태그 목록 */}
@@ -48,4 +64,4 @@ const Place = () => {
   );
 };
 
-export default Place;
+export default PlaceDetail;
