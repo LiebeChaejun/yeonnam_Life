@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Category {
   isButton: boolean;
   shop?: string;
