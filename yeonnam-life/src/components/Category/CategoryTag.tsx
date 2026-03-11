@@ -1,10 +1,8 @@
-import React from "react";
-
 interface CategoryBox {
   shop?: string;
 }
 
-const CategoryCard = ({ shop }: CategoryBox) => {
+const CategoryTag = ({ shop }: CategoryBox) => {
   let image = "🔎";
   let label = "전체";
   if (shop === "bakery") {
@@ -29,4 +27,4 @@ const CategoryCard = ({ shop }: CategoryBox) => {
   );
 };
 
-export default CategoryCard;
+export default CategoryTag;

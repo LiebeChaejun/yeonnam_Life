@@ -1,5 +1,4 @@
-import React from "react";
-import CategoryBox from "../categoryBox/CategoryButton";
+import CategoryButton from "../../../components/Category/CategoryButton";
 
 const Map = () => {
   return (
@@ -9,10 +8,10 @@ const Map = () => {
 
         {/* 카테고리 선택 목록 */}
         <ul className="flex gap-2">
-          <CategoryBox isButton={true} />
-          <CategoryBox isButton={true} shop="cafe" />
-          <CategoryBox isButton={true} shop="bakery" />
-          <CategoryBox isButton={true} shop="restaurant" />
+          <CategoryButton isButton={true} />
+          <CategoryButton isButton={true} shop="cafe" />
+          <CategoryButton isButton={true} shop="bakery" />
+          <CategoryButton isButton={true} shop="restaurant" />
         </ul>
 
         {/* 지도 보여줄 곳 */}

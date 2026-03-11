@@ -1,6 +1,5 @@
-import React from "react";
-import Map from "../../components/map/Map";
-import PlaceCard from "../../components/place/PlaceCard";
+import Map from "./components/Map";
+import PlaceCard from "../PlaceDetail/components/PlaceCard";
 
 const MapDetail = () => {
   return (

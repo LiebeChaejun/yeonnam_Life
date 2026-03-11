@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
-import CourseDetail from "./pages/courseDetail/CourseDetail";
-import PlaceDetail from "./pages/placeDetail/PlaceDetail";
-import MapDetail from "./pages/mapDetail/MapDetail";
+import Home from "./pages/Home/Home";
+import CourseDetail from "./pages/CourseDetail/CourseDetail";
+import PlaceDetail from "./pages/PlaceDetail/PlaceDetail";
+import MapDetail from "./pages/MapDetail/MapDetail";
 
 function App() {
   return (
