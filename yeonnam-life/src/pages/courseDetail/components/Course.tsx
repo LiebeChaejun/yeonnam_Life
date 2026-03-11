@@ -1,7 +1,6 @@
-import React from "react";
-import PlaceCard from "../place/PlaceCard";
-import Clock from "../img/iconClock.svg";
-import Walking from "../img/iconWalking.svg";
+import PlaceCard from "../../PlaceDetail/components/PlaceCard";
+import Clock from "../../../assets/icons/iconClock.svg";
+import Walking from "../../../assets/icons/iconWalking.svg";
 
 const Course = () => {
   return (

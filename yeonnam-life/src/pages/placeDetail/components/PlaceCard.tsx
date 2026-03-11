@@ -1,7 +1,6 @@
-import React from "react";
-import heartActive from "../img/heartActive.svg";
-import heartEmpty from "../img/heartInactive.svg";
-import star from "../img/star.svg";
+import heartActive from "../../../assets/icons/heartActive.svg";
+import heartEmpty from "../../../assets/icons/heartInactive.svg";
+import star from "../../../assets/icons/star.svg";
 
 interface PlaceCard {
   isHome: boolean;

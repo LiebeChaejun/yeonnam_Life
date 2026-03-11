@@ -1,7 +1,7 @@
-import Carousel from "../../components/home/carousel/Carousel";
-import CourseCard from "../../components/course/CourseCard";
-import CategoryCard from "../../components/home/category/CategoryCard";
-import PlaceCard from "../../components/place/PlaceCard";
+import Carousel from "./components/Carousel/Carousel";
+import CourseCard from "../CourseDetail/components/CourseCard";
+import CategoryCard from "../../components/Category/CategoryTag";
+import PlaceCard from "../PlaceDetail/components/PlaceCard";
 
 const Home = () => {
   return (

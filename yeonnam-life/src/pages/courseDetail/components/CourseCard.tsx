@@ -1,6 +1,5 @@
-import React from "react";
-import iconClock from "../img/iconClockGrey.svg";
-import iconWalking from "../img/iconWalkingGrey.svg";
+import iconClock from "../../../assets/icons/iconClockGrey.svg";
+import iconWalking from "../../../assets/icons/iconWalkingGrey.svg";
 
 const CourseCard = () => {
   return (

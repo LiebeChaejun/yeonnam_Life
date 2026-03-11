@@ -5,7 +5,7 @@ interface Category {
   shop?: string;
 }
 
-const CategoryBox = ({ isButton, shop }: Category) => {
+const CategoryButton = ({ isButton, shop }: Category) => {
   let label = "✨ 전체";
   if (shop === "bakery") {
     label = "🥐 베이커리";
@@ -32,4 +32,4 @@ const CategoryBox = ({ isButton, shop }: Category) => {
   }
 };
 
-export default CategoryBox;
+export default CategoryButton;

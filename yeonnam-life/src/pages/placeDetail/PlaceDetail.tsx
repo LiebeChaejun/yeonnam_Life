@@ -1,10 +1,9 @@
-import React from "react";
-import CategoryBox from "../../components/categoryBox/CategoryButton";
-import backArrow from "../../components/img/backArrow.svg";
-import heart from "../../components/img/heartInactive.svg";
-import star from "../../components/img/star.svg";
-import clock from "../../components/img/iconClockGrey.svg";
-import location from "../../components/img/icon-location-gray.svg";
+import CategoryBox from "../../components/Category/CategoryButton";
+import backArrow from "../../assets/icons/backArrow.svg";
+import heart from "../../assets/icons/heartInactive.svg";
+import star from "../../assets/icons/star.svg";
+import clock from "../../assets/icons/iconClockGrey.svg";
+import location from "../../assets/icons/iconLocationGray.svg";
 
 const PlaceDetail = () => {
   return (

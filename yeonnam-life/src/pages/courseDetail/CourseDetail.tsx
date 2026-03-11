@@ -1,6 +1,5 @@
-import React from "react";
-import Course from "../../components/course/Course";
-import backArrow from "../../components/img/backArrow.svg";
+import Course from "./components/Course";
+import backArrow from "../../assets/icons/backArrow.svg";
 
 const CourseDetail = () => {
   return (
