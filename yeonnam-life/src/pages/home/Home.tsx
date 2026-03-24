@@ -1,9 +1,43 @@
+import { useEffect, useState } from "react";
+
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
 import CategoryCard from "../../components/Category/CategoryTag";
 import PlaceCard from "../PlaceDetail/components/PlaceCard";
 
+interface Courses {
+  id: string;
+  editorId: string;
+  title: string;
+  description: string;
+  duration: string;
+  distance: string;
+  spots: string[];
+  tags: string[];
+  likeCount: number;
+  thumbnail: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 const Home = () => {
+  const [courses, setCourses] = useState<Courses[]>([]);
+
+  const getCourseData = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/courses");
+      const data = (await res.json()) as Courses[];
+      setCourses(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getCourseData();
+    console.log(courses);
+  }, []);
+
   return (
     <>
       {/* 캐러샐 */}
@@ -28,9 +62,22 @@ const Home = () => {
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
         <div className="flex gap-3 max-w-100 overflow-x-scroll">
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
+          {courses.length !== 0 ? (
+            courses.map((item) => {
+              return (
+                <>
+                  <CourseCard
+                    title={item.title}
+                    description={item.description}
+                    duration={item.duration}
+                    distance={item.distance}
+                  />
+                </>
+              );
+            })
+          ) : (
+            <></>
+          )}
         </div>
       </div>
 
