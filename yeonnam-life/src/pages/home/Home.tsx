@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
@@ -25,9 +27,9 @@ const Home = () => {
 
   const getCourseData = async () => {
     try {
-      const res = await fetch("http://localhost:3000/courses");
-      const data = (await res.json()) as Courses[];
-      setCourses(data);
+      const res = await axios("http://localhost:3000/courses");
+      setCourses(res.data);
+      console.log(res.data);
     } catch (error) {
       console.error(error);
     }
@@ -35,7 +37,6 @@ const Home = () => {
 
   useEffect(() => {
     getCourseData();
-    console.log(courses);
   }, []);
 
   return (
@@ -66,13 +67,15 @@ const Home = () => {
             courses.map((item) => {
               return (
                 <>
-                  <CourseCard
-                    id={item.id}
-                    title={item.title}
-                    description={item.description}
-                    duration={item.duration}
-                    distance={item.distance}
-                  />
+                  <Link to={`/courses/${item.id}`}>
+                    <CourseCard
+                      id={item.id}
+                      title={item.title}
+                      description={item.description}
+                      duration={item.duration}
+                      distance={item.distance}
+                    />
+                  </Link>
                 </>
               );
             })

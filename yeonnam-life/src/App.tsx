@@ -14,7 +14,7 @@ function App() {
             <div className="relative flex flex-col gap-3 px-3 py-3">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/course" element={<CourseDetail />} />
+                <Route path="/courses/:id" element={<CourseDetail />} />
                 <Route path="/place" element={<PlaceDetail />} />
                 <Route path="/course" element={<CourseDetail />} />
                 <Route path="/map" element={<MapDetail />} />

@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 import iconClock from "../../../assets/icons/iconClockGrey.svg";
 import iconWalking from "../../../assets/icons/iconWalkingGrey.svg";
 
@@ -18,16 +16,17 @@ interface Courses {
   updatedAt: string;
 }
 
-const CourseCard = ({ title, description, duration, distance }: Courses) => {
-  const navigate = useNavigate();
-  const navigateToCourse = () => {
-    navigate("/course");
-  };
-
+const CourseCard = ({
+  id,
+  title,
+  description,
+  duration,
+  distance,
+}: Courses) => {
   return (
     <li
-      onClick={navigateToCourse}
       className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
+      key={id}
     >
       <p className="text-3xl">☕️</p>
       <div className="flex flex-col">
