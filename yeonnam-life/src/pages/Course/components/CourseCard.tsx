@@ -12,7 +12,7 @@ const CourseCard = () => {
   return (
     <button
       onClick={navigateToCourse}
-      className="bg-bg-card min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5"
+      className="bg-bg-card border-border border-2 min-w-70 h-40 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
     >
       <p className="text-3xl">☕️</p>
       <div className="flex flex-col">
