@@ -1,5 +1,5 @@
 import Carousel from "./components/Carousel/Carousel";
-import CourseCard from "../CourseDetail/components/CourseCard";
+import CourseCard from "../Course/components/CourseCard";
 import CategoryCard from "../../components/Category/CategoryTag";
 import PlaceCard from "../PlaceDetail/components/PlaceCard";
 
