@@ -61,12 +61,13 @@ const Home = () => {
           <h2 className="text-xl font-bold">추천 산책코스</h2>
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
-        <div className="flex gap-3 max-w-100 overflow-x-scroll">
+        <ul className="flex gap-3 max-w-100 overflow-x-scroll">
           {courses.length !== 0 ? (
             courses.map((item) => {
               return (
                 <>
                   <CourseCard
+                    id={item.id}
                     title={item.title}
                     description={item.description}
                     duration={item.duration}
@@ -78,7 +79,7 @@ const Home = () => {
           ) : (
             <></>
           )}
-        </div>
+        </ul>
       </div>
 
       {/* 인기장소 */}
