@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Course from "./components/Course";
 import axios from "axios";
 import type { CoursesType } from "../../types/CoursesType.ts";
@@ -9,6 +9,7 @@ import backArrow from "../../assets/icons/backArrow.svg";
 const CourseDetail = () => {
   const [course, setCourse] = useState<CoursesType[]>();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const getCourseDataById = async () => {
     try {
@@ -28,7 +29,11 @@ const CourseDetail = () => {
   return (
     <>
       <div className="flex gap-1">
-        <button>
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <img src={backArrow} alt="뒤로가기" />
         </button>
         <h2 className="text-xl font-semibold">산책 코스</h2>
