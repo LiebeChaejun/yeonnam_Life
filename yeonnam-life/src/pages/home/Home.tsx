@@ -1,29 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import type { CoursesType } from "../../types/CoursesType.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
 import CategoryCard from "../../components/Category/CategoryTag";
 import PlaceCard from "../PlaceDetail/components/PlaceCard";
 
-interface Courses {
-  id: string;
-  editorId: string;
-  title: string;
-  description: string;
-  duration: string;
-  distance: string;
-  spots: string[];
-  tags: string[];
-  likeCount: number;
-  thumbnail: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
 const Home = () => {
-  const [courses, setCourses] = useState<Courses[]>([]);
+  const [courses, setCourses] = useState<CoursesType[]>([]);
 
   const getCourseData = async () => {
     try {

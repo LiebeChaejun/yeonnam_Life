@@ -1,20 +1,7 @@
+import type { CoursesType } from "../../../types/CoursesType";
+
 import iconClock from "../../../assets/icons/iconClockGrey.svg";
 import iconWalking from "../../../assets/icons/iconWalkingGrey.svg";
-
-interface Courses {
-  id: string;
-  editorId: string;
-  title: string;
-  description: string;
-  duration: string;
-  distance: string;
-  spots: string[];
-  tags: string[];
-  likeCount: number;
-  thumbnail: string;
-  createdAt: string;
-  updatedAt: string;
-}
 
 const CourseCard = ({
   id,
@@ -22,7 +9,7 @@ const CourseCard = ({
   description,
   duration,
   distance,
-}: Courses) => {
+}: CoursesType) => {
   return (
     <li
       className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"

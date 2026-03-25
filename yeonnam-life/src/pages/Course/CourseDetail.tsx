@@ -2,19 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Course from "./components/Course";
 import axios from "axios";
+import type { CoursesType } from "../../types/CoursesType.ts";
 
 import backArrow from "../../assets/icons/backArrow.svg";
 
-interface Course {
-  id: string;
-  editorid: string;
-  description: string;
-  duration: string;
-  distance: string;
-}
-
 const CourseDetail = () => {
-  const [course, setCourse] = useState({});
+  const [course, setCourse] = useState<CoursesType[]>();
   const { id } = useParams();
 
   const getCourseDataById = async () => {
