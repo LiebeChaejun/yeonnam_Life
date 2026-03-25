@@ -2,12 +2,7 @@ import heartActive from "../../../assets/icons/heartActive.svg";
 import heartEmpty from "../../../assets/icons/heartInactive.svg";
 import star from "../../../assets/icons/star.svg";
 import type { PlaceCardType } from "../../../types/PlaceCardType";
-
-const CATEGORY_EMOJI: Record<string, string> = {
-  bakery: "🥐",
-  cafe: "☕️",
-  restaurant: "🍽️",
-};
+import { CATEGORY_EMOJI } from "../../../types/PlaceCardType";
 
 const PlaceCard = ({ isHome, place }: PlaceCardType) => {
   const { category, description, name, rating } = place;
