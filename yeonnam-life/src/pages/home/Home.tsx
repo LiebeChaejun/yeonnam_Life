@@ -5,7 +5,7 @@ import type { CoursesType } from "../../types/CoursesType.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
-import CategoryCard from "../../components/Category/CategoryTag";
+import CategoryTag from "../../components/Category/CategoryTag";
 import PlaceCard from "../PlaceDetail/components/PlaceCard";
 
 const Home = () => {
@@ -35,10 +35,10 @@ const Home = () => {
         <h2 className="text-xl font-bold">어디로 떠날까요?</h2>
         <div className="flex gap-3 max-w-100 overflow-x-scroll">
           {/* 카테고리 */}
-          <CategoryCard />
-          <CategoryCard shop="cafe" />
-          <CategoryCard shop="restaurant" />
-          <CategoryCard shop="bakery" />
+          <CategoryTag />
+          <CategoryTag shop="cafe" />
+          <CategoryTag shop="restaurant" />
+          <CategoryTag shop="bakery" />
         </div>
       </div>
 
