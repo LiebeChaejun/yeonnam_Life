@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import type { CoursesType } from "../../types/CoursesType.ts";
-import type { Place } from "../../types/Place.ts";
+import type { PlaceType } from "../../types/PlaceType.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
@@ -12,7 +12,7 @@ import PlaceCard from "../Place/components/PlaceCard.tsx";
 
 const Home = () => {
   const [courses, setCourses] = useState<CoursesType[]>([]);
-  const [places, setPlaces] = useState<Place[]>([]);
+  const [places, setPlaces] = useState<PlaceType[]>([]);
 
   const getCourseData = async () => {
     try {

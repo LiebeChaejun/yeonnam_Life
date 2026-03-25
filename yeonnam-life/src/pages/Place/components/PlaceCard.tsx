@@ -1,7 +1,7 @@
 import heartActive from "../../../assets/icons/heartActive.svg";
 import heartEmpty from "../../../assets/icons/heartInactive.svg";
 import star from "../../../assets/icons/star.svg";
-import type { PlaceCard } from "../../../types/PlaceCard";
+import type { PlaceCardType } from "../../../types/PlaceCardType";
 
 const CATEGORY_EMOJI: Record<string, string> = {
   bakery: "🥐",
@@ -9,7 +9,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   restaurant: "🍽️",
 };
 
-const PlaceCard = ({ isHome, place }: PlaceCard) => {
+const PlaceCard = ({ isHome, place }: PlaceCardType) => {
   const { category, description, name, rating } = place;
   const categoryEmoji = CATEGORY_EMOJI[category] || "✨";
 
