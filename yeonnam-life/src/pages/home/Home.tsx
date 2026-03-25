@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 import type { CoursesType } from "../../types/CoursesType.ts";
+import type { Place } from "../../types/Place.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
@@ -10,6 +12,7 @@ import PlaceCard from "../Place/components/PlaceCard.tsx";
 
 const Home = () => {
   const [courses, setCourses] = useState<CoursesType[]>([]);
+  const [places, setPlaces] = useState<Place[]>([]);
 
   const getCourseData = async () => {
     try {
@@ -21,8 +24,18 @@ const Home = () => {
     }
   };
 
+  const getPlaceData = async () => {
+    try {
+      const res = await axios("http://localhost:3000/places");
+      setPlaces(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     getCourseData();
+    getPlaceData();
   }, []);
 
   return (
@@ -75,9 +88,13 @@ const Home = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">인기 장소🔥</h2>
         <ul className="flex flex-col gap-3">
-          <PlaceCard isHome={true} />
-          <PlaceCard isHome={true} />
-          <PlaceCard isHome={true} />
+          {places.map((item) => {
+            return (
+              <Link to={`/place${item.name}`}>
+                <PlaceCard isHome={true} place={item} />
+              </Link>
+            );
+          })}
         </ul>
       </div>
     </>

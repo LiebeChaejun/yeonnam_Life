@@ -1,25 +1,33 @@
 import heartActive from "../../../assets/icons/heartActive.svg";
 import heartEmpty from "../../../assets/icons/heartInactive.svg";
 import star from "../../../assets/icons/star.svg";
+import type { PlaceCard } from "../../../types/PlaceCard";
 
-interface PlaceCard {
-  isHome: boolean;
-}
+const CATEGORY_EMOJI: Record<string, string> = {
+  bakery: "🥐",
+  cafe: "☕️",
+  restaurant: "🍽️",
+};
 
-const PlaceCard = ({ isHome }: PlaceCard) => {
+const PlaceCard = ({ isHome, place }: PlaceCard) => {
+  const { category, description, name, rating } = place;
+  const categoryEmoji = CATEGORY_EMOJI[category] || "✨";
+
   if (isHome) {
     return (
-      <li className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
+      <li className="bg-bg-card border-border border-2 h-16 rounded-2xl flex items-center justify-between px-3 hover:bg-bg-warm">
         <div className="flex items-center gap-3">
-          <p className="text-2xl">🍞</p>
+          <p className="text-2xl">{categoryEmoji}</p>
           <div>
-            <p className="font-semibold">밀도</p>
-            <p className="font-light text-sm">식빵 한 장의 행복, 연남 본점</p>
+            <p className="font-semibold">{name}</p>
+            <p className="w-70 font-light text-sm line-clamp-1">
+              {description}
+            </p>
           </div>
         </div>
         <div className="flex gap-1 justify-self-end">
           <img src={star} alt="" className="w-4 h-4" />
-          <p className="text-xs text-[#FFC107]">별점</p>
+          <p className="text-xs text-[#FFC107]">{rating}</p>
         </div>
       </li>
     );
