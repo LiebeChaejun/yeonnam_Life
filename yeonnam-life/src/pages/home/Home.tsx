@@ -6,7 +6,7 @@ import type { CoursesType } from "../../types/CoursesType.ts";
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
 import CategoryTag from "../../components/Category/CategoryTag";
-import PlaceCard from "../PlaceDetail/components/PlaceCard";
+import PlaceCard from "../Place/components/PlaceCard.tsx";
 
 const Home = () => {
   const [courses, setCourses] = useState<CoursesType[]>([]);

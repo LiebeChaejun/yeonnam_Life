@@ -1,5 +1,5 @@
 import Map from "./components/Map";
-import PlaceCard from "../PlaceDetail/components/PlaceCard";
+import PlaceCard from "../Place/components/PlaceCard";
 
 const MapDetail = () => {
   return (

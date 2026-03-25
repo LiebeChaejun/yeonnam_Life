@@ -1,4 +1,4 @@
-import PlaceCard from "../../PlaceDetail/components/PlaceCard";
+import PlaceCard from "../../Place/components/PlaceCard";
 import Clock from "../../../assets/icons/iconClock.svg";
 import Walking from "../../../assets/icons/iconWalking.svg";
 
