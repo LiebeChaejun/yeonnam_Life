@@ -18,7 +18,7 @@ const CategoryTag = ({ shop }: CategoryBox) => {
 
   return (
     <>
-      <div className="bg-bg-card min-w-33 h-33 rounded-2xl flex flex-col justify-center items-center">
+      <div className="bg-bg-card border-border border-2 min-w-33 h-33 rounded-2xl flex flex-col justify-center items-center hover:bg-bg-warm">
         <p className="text-4xl">{image}</p>
         <p className="text-base font-semibold">{label}</p>
         <p className="text-xs text-text-muted">3곳</p>
