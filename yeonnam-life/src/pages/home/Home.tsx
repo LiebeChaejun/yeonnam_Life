@@ -8,11 +8,12 @@ import type { PlaceType } from "../../types/PlaceType.ts";
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
 import CategoryTag from "../../components/Category/CategoryTag";
-import PlaceCard from "../Place/components/PlaceCard.tsx";
+import PlaceCard from "@/pages/Place/components/PlaceCard.tsx";
 
 const Home = () => {
   const [courses, setCourses] = useState<CoursesType[]>([]);
   const [places, setPlaces] = useState<PlaceType[]>([]);
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const getCourseData = async () => {
     try {
@@ -26,7 +27,7 @@ const Home = () => {
 
   const getPlaceData = async () => {
     try {
-      const res = await axios("http://localhost:3000/places");
+      const res = await axios(`${baseURL}/places`);
       setPlaces(res.data);
     } catch (error) {
       console.error(error);
