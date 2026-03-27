@@ -91,7 +91,7 @@ const Home = () => {
         <ul className="flex flex-col gap-3">
           {places.map((item) => {
             return (
-              <Link to={`/place${item.name}`}>
+              <Link to={`/place/${item.name}`}>
                 <PlaceCard isHome={true} place={item} />
               </Link>
             );
