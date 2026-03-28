@@ -1,4 +1,4 @@
-import type { CoursesType } from "../../../types/CoursesType";
+import type { CoursesType } from "../../../types/Course";
 
 import iconClock from "../../../assets/icons/iconClockGrey.svg";
 import iconWalking from "../../../assets/icons/iconWalkingGrey.svg";
