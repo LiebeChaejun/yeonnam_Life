@@ -19,7 +19,7 @@ const Home = () => {
         const data = await getCourses();
         actions.setCourses(data);
       } catch (error) {
-        actions.setError("코스를 불러오지 못했어요.");
+        actions.setError("코스 목록을 불러오지 못했어요.");
       } finally {
         actions.setLoading(false);
       }
