@@ -1,7 +1,3 @@
-import heartActive from "../../../assets/icons/heartActive.svg";
-import heartEmpty from "../../../assets/icons/heartInactive.svg";
-import star from "../../../assets/icons/star.svg";
-
 const PlaceCardHome = () => {
   return (
     <li className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
