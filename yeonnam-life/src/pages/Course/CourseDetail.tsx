@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCourseById } from "../../api/courseApi";
+import { getPlaces } from "@/api/placeApi";
 import { useCourseStore } from "../../stores/useCoursesStore";
+import { usePlaceStore } from "@/stores/usePlaceStore";
 import Course from "./components/Course";
 
 import backArrow from "../../assets/icons/backArrow.svg";
@@ -10,21 +12,24 @@ const CourseDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const { actions } = useCourseStore();
-  const course = useCourseStore((state) => state.course);
+  const { actions: courseActions } = useCourseStore();
+  const { actions: placeActions } = usePlaceStore();
 
   useEffect(() => {
     const fetch = async () => {
-      actions.setLoading(true);
+      courseActions.setLoading(true);
       try {
-        const data = await getCourseById(id); // 여기 타입 오류 처리?
-        actions.setCourse(data);
+        const courseData = await getCourseById(id); // 여기 타입 오류 처리?
+        courseActions.setCourse(courseData);
+        const placesData = await getPlaces();
+        placeActions.setPlaces(placesData);
       } catch (error) {
-        actions.setError("코스 데이터를 불러오지 못했어요");
+        courseActions.setError("코스 데이터를 불러오지 못했어요");
+      } finally {
+        courseActions.setLoading(true);
       }
     };
     fetch();
-    console.log(course);
   }, []);
 
   return (
