@@ -60,17 +60,15 @@ const Home = () => {
           {courses.length !== 0 ? (
             courses.map((item) => {
               return (
-                <>
-                  <Link to={`/courses/${item.id}`}>
-                    <CourseCard
-                      id={item.id}
-                      title={item.title}
-                      description={item.description}
-                      duration={item.duration}
-                      distance={item.distance}
-                    />
-                  </Link>
-                </>
+                <Link key={item.id} to={`/courses/${item.id}`}>
+                  <CourseCard
+                    id={item.id}
+                    title={item.title}
+                    description={item.description}
+                    duration={item.duration}
+                    distance={item.distance}
+                  />
+                </Link>
               );
             })
           ) : (
