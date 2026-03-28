@@ -1,5 +1,5 @@
 import api from "./index";
-import type { Course } from "../types/Courses";
+import type { Course } from "../types/Course";
 
 export const getCourses = async () => {
   const { data } = await api.get("courses");

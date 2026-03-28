@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { CourseActions, CourseState } from "../types/Courses";
+import type { CourseActions, CourseState } from "../types/Course";
 
 const initialState = {
   course: null,

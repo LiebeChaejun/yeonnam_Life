@@ -1,4 +1,4 @@
-import type { Spot } from "../../../types/Courses";
+import type { Spot } from "../../../types/Course";
 
 import heartActive from "../../../assets/icons/heartActive.svg";
 import heartEmpty from "../../../assets/icons/heartInactive.svg";
