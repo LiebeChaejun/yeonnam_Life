@@ -1,28 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import type { CoursesType } from "../../types/CoursesType.ts";
+import { useCourseStore } from "../../stores/useCoursesStore.ts";
+import { getCourses } from "../../api/courseApi.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
 import CategoryCard from "../../components/Category/CategoryTag";
-import PlaceCard from "../PlaceDetail/components/PlaceCard";
+import PlaceCard from "../PlaceDetail/components/PlaceCard.tsx";
 
 const Home = () => {
-  const [courses, setCourses] = useState<CoursesType[]>([]);
-
-  const getCourseData = async () => {
-    try {
-      const res = await axios("http://localhost:3000/courses");
-      setCourses(res.data);
-      console.log(res.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { actions } = useCourseStore();
+  const courses = useCourseStore((state) => state.courses);
 
   useEffect(() => {
-    getCourseData();
+    const fetch = async () => {
+      actions.setLoading(true);
+      try {
+        const data = await getCourses();
+        actions.setCourses(data);
+      } catch (error) {
+        actions.setError("코스를 불러오지 못했어요.");
+      } finally {
+        actions.setLoading(false);
+      }
+    };
+
+    fetch();
   }, []);
 
   return (
