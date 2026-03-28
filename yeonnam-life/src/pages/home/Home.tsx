@@ -6,7 +6,7 @@ import { getCourses } from "../../api/courseApi.ts";
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
 import CategoryCard from "../../components/Category/CategoryTag";
-import PlaceCard from "../PlaceDetail/components/PlaceCard.tsx";
+import PlaceCardHome from "../PlaceDetail/components/PlaceCardHome.tsx";
 
 const Home = () => {
   const { actions } = useCourseStore();
@@ -78,9 +78,9 @@ const Home = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">인기 장소🔥</h2>
         <ul className="flex flex-col gap-3">
-          <PlaceCard isHome={true} />
-          <PlaceCard isHome={true} />
-          <PlaceCard isHome={true} />
+          <PlaceCardHome />
+          <PlaceCardHome />
+          <PlaceCardHome />
         </ul>
       </div>
     </>

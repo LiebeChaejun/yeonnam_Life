@@ -31,9 +31,13 @@ const Course = () => {
         {/* 코스별 장소 목룍*/}
         <ul className="flex flex-col gap-5">
           {/* 코스별 장소 */}
-          <PlaceCard isHome={false} />
-          <PlaceCard isHome={false} />
-          <PlaceCard isHome={false} />
+          {spots?.map((spot) => {
+            return (
+              <>
+                <PlaceCard place={spot} />
+              </>
+            );
+          })}
         </ul>
       </div>
     </>
