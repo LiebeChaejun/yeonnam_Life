@@ -39,7 +39,7 @@ const Course = () => {
             return (
               <>
                 <Link to={`/place/${spot.placeId}`}>
-                  <PlaceCard place={spot} />
+                  <PlaceCard spot={spot} />
                 </Link>
               </>
             );

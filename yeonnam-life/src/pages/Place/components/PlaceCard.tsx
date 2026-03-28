@@ -1,19 +1,22 @@
 import { useEffect } from "react";
 import { getPlaceById } from "@/api/placeApi";
+import { usePlaceStore } from "@/stores/usePlaceStore";
 import type { Spot } from "../../../types/Course";
 
 import heartActive from "../../../assets/icons/heartActive.svg";
 import star from "../../../assets/icons/star.svg";
 
 interface PlaceCardProps {
-  place: Spot;
+  spot: Spot;
 }
 
-const PlaceCard = ({ place }: PlaceCardProps) => {
+const PlaceCard = ({ spot }: PlaceCardProps) => {
+  const place = usePlaceStore((state) => state.place);
+
   useEffect(() => {
     const fetch = async () => {
       try {
-        const data = await getPlaceById(place.placeId);
+        const data = await getPlaceById(spot.placeId);
       } catch (error) {}
     };
     fetch();
