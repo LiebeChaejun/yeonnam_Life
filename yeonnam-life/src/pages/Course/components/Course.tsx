@@ -1,3 +1,4 @@
+import { Link, useParams } from "react-router-dom";
 import { useCourseStore } from "../../../stores/useCoursesStore";
 
 import PlaceCard from "../../Place/components/PlaceCard";
@@ -7,6 +8,8 @@ import Walking from "../../../assets/icons/iconWalking.svg";
 const Course = () => {
   const course = useCourseStore((state) => state.course);
   const spots = useCourseStore((state) => state.course?.spots);
+
+  const { courseName } = useParams();
 
   return (
     <>
@@ -37,7 +40,9 @@ const Course = () => {
           {spots?.map((spot) => {
             return (
               <>
-                <PlaceCard place={spot} />
+                <Link to={`/place/${courseName}`}>
+                  <PlaceCard place={spot} />
+                </Link>
               </>
             );
           })}
