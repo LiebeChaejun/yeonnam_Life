@@ -2,7 +2,7 @@ import star from "../../../assets/icons/star.svg";
 
 const PlaceCardHome = () => {
   return (
-    <li className="bg-bg-card h-16 rounded-2xl flex items-center justify-between px-3">
+    <li className="bg-bg-card h-16 border-border border-2 rounded-2xl flex items-center justify-between px-3 hover:bg-bg-warm">
       <div className="flex items-center gap-3">
         <p className="text-2xl">🍞</p>
         <div>
