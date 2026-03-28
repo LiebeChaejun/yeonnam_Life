@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCourseStore } from "../../stores/useCoursesStore.ts";
+import { usePlaceStore } from "@/stores/usePlaceStore.ts";
 import { getCourses } from "../../api/courseApi.ts";
 import { getPlaces } from "@/api/placeApi.ts";
 
@@ -10,19 +11,22 @@ import CategoryTag from "../../components/Category/CategoryTag";
 import PlaceCardHome from "../Place/components/PlaceCardHome.tsx";
 
 const Home = () => {
-  const { actions } = useCourseStore();
+  const { actions: courseActions } = useCourseStore();
+  const { actions: placeActions } = usePlaceStore();
   const courses = useCourseStore((state) => state.courses);
 
   useEffect(() => {
     const fetch = async () => {
-      actions.setLoading(true);
+      courseActions.setLoading(true);
       try {
-        const data = await getCourses();
-        actions.setCourses(data);
+        const courseData = await getCourses();
+        const placeData = await getPlaces();
+        courseActions.setCourses(courseData);
+        placeActions.setPlaces(placeData);
       } catch (error) {
-        actions.setError("코스 목록을 불러오지 못했어요.");
+        courseActions.setError("코스 목록을 불러오지 못했어요.");
       } finally {
-        actions.setLoading(false);
+        courseActions.setLoading(false);
       }
     };
 
