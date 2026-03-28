@@ -2,24 +2,16 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCourseStore } from "../../stores/useCoursesStore.ts";
 import { getCourses } from "../../api/courseApi.ts";
+import { getPlaces } from "@/api/placeApi.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
-import CategoryCard from "../../components/Category/CategoryTag";
-import PlaceCardHome from "../PlaceDetail/components/PlaceCardHome.tsx";
+import CategoryTag from "../../components/Category/CategoryTag";
+import PlaceCardHome from "../Place/components/PlaceCardHome.tsx";
 
 const Home = () => {
   const { actions } = useCourseStore();
   const courses = useCourseStore((state) => state.courses);
-
-  const getPlaceData = async () => {
-    try {
-      const res = await axios(`${baseURL}/places`);
-      setPlaces(res.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   useEffect(() => {
     const fetch = async () => {
