@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCourseStore } from "../../../stores/useCoursesStore";
+import { usePlaceStore } from "@/stores/usePlaceStore";
 
 import PlaceCard from "../../Place/components/PlaceCard";
 import Clock from "../../../assets/icons/iconClock.svg";
@@ -8,6 +9,7 @@ import Walking from "../../../assets/icons/iconWalking.svg";
 const Course = () => {
   const course = useCourseStore((state) => state.course);
   const spots = useCourseStore((state) => state.course?.spots);
+  const places = usePlaceStore((state) => state.places);
 
   return (
     <>
@@ -36,12 +38,18 @@ const Course = () => {
         <ul className="flex flex-col gap-5">
           {/* 코스별 장소 */}
           {spots?.map((spot) => {
+            const place = places.find((p) => p.id === spot.placeId);
+
+            console.log("spot.placeId:", spot.placeId);
+            console.log("찾은 place:", place);
+            console.log("places 전체:", places);
+
+            if (!place) return null;
+
             return (
-              <>
-                <Link to={`/place/${spot.placeId}`}>
-                  <PlaceCard spot={spot} />
-                </Link>
-              </>
+              <Link key={spot.placeId} to={`place/${spot.placeId}`}>
+                <PlaceCard place={place} />
+              </Link>
             );
           })}
         </ul>

@@ -1,27 +1,13 @@
-import { useEffect } from "react";
-import { getPlaceById } from "@/api/placeApi";
-import { usePlaceStore } from "@/stores/usePlaceStore";
-import type { Spot } from "../../../types/Course";
+import type { PartialPlace } from "@/types/Place";
 
 import heartActive from "../../../assets/icons/heartActive.svg";
 import star from "../../../assets/icons/star.svg";
 
 interface PlaceCardProps {
-  spot: Spot;
+  place: PartialPlace;
 }
 
-const PlaceCard = ({ spot }: PlaceCardProps) => {
-  const place = usePlaceStore((state) => state.place);
-
-  useEffect(() => {
-    const fetch = async () => {
-      try {
-        const data = await getPlaceById(spot.placeId);
-      } catch (error) {}
-    };
-    fetch();
-  }, []);
-
+const PlaceCard = ({ place }: PlaceCardProps) => {
   return (
     <li className="flex gap-2">
       <div className="relative flex gap-2 bg-bg-card w-full px-3 py-3 rounded-2xl items-center">
@@ -34,22 +20,24 @@ const PlaceCard = ({ spot }: PlaceCardProps) => {
         <div>
           {/* 이름 + 카테고리 */}
           <div className="flex gap-1">
-            <h4 className="text-xl font-medium">연남 살롱</h4>
+            <h4 className="text-xl font-medium">{place?.name}</h4>
             <div className="p-1 rounded-full bg-bg-warm text-xs text-cafe content-center">
-              카페
+              {place?.category}
             </div>
           </div>
 
           {/* 설명 */}
-          <p className="text-sm text-text-muted w-50 mr-6">{spot.note}</p>
+          <p className="text-sm text-text-muted w-50 mr-6">
+            {place?.shortDescription}
+          </p>
 
           {/* 별점 + 주소 */}
           <div className="flex gap-2">
             <div className="flex">
               <img src={star} alt="" className="w-4 h-4" />
-              <p className="text-xs text-[#FFC107]">4.9</p>
+              <p className="text-xs text-[#FFC107]">{place.rating}</p>
             </div>
-            <p className="text-text-secondary text-xs">서울 마포구 연남로 38</p>
+            <p className="text-text-secondary text-xs">{place.address}</p>
           </div>
         </div>
 
