@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { getPlaceById } from "@/api/placeApi";
 import type { Spot } from "../../../types/Course";
 
 import heartActive from "../../../assets/icons/heartActive.svg";
@@ -8,6 +10,15 @@ interface PlaceCardProps {
 }
 
 const PlaceCard = ({ place }: PlaceCardProps) => {
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const data = await getPlaceById(place.placeId);
+      } catch (error) {}
+    };
+    fetch();
+  }, []);
+
   return (
     <li className="flex gap-2">
       <div className="relative flex gap-2 bg-bg-card w-full px-3 py-3 rounded-2xl items-center">
