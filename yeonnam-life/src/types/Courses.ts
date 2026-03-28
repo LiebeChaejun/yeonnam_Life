@@ -1,4 +1,4 @@
-interface Spot {
+export interface Spot {
   order: number;
   placeId: string;
   note: string;
