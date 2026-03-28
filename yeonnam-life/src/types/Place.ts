@@ -32,7 +32,7 @@ export interface Place {
   updatedAt: string;
 }
 
-type PartialPlace = Partial<Place>;
+export type PartialPlace = Partial<Place>;
 
 export type PlaceState = {
   place: PartialPlace | null; // 단일 장소
