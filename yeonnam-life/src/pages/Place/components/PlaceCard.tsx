@@ -41,7 +41,7 @@ const PlaceCard = ({ spot }: PlaceCardProps) => {
           </div>
 
           {/* 설명 */}
-          <p className="text-sm text-text-muted w-50 mr-6">{place.note}</p>
+          <p className="text-sm text-text-muted w-50 mr-6">{spot.note}</p>
 
           {/* 별점 + 주소 */}
           <div className="flex gap-2">
