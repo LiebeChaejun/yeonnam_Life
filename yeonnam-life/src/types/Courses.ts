@@ -4,7 +4,7 @@ interface Spot {
   note: string;
 }
 
-interface Course {
+export interface Course {
   id: string;
   editorId: string;
   title: string;
