@@ -1,4 +1,4 @@
-import type { PlaceType } from "./PlaceType";
+import type { Place } from "./Place";
 
 export const CATEGORY_EMOJI: Record<string, string> = {
   bakery: "🥐",
@@ -8,5 +8,5 @@ export const CATEGORY_EMOJI: Record<string, string> = {
 
 export interface PlaceCardType {
   isHome: boolean;
-  place: PlaceType;
+  place: Place;
 }
