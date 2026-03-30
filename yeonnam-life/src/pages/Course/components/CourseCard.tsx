@@ -1,15 +1,9 @@
-import type { CoursesType } from "../../../types/Course";
+import type { Course } from "../../../types/Course";
 
 import iconClock from "../../../assets/icons/iconClockGrey.svg";
 import iconWalking from "../../../assets/icons/iconWalkingGrey.svg";
 
-const CourseCard = ({
-  id,
-  title,
-  description,
-  duration,
-  distance,
-}: CoursesType) => {
+const CourseCard = ({ id, title, description, duration, distance }: Course) => {
   return (
     <li
       className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
