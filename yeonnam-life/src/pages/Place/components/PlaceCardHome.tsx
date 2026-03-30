@@ -1,6 +1,8 @@
+import type { PlaceCardProps } from "@/types/Place";
+
 import star from "../../../assets/icons/star.svg";
 
-const PlaceCardHome = () => {
+const PlaceCardHome = ({ place }: PlaceCardProps) => {
   return (
     <li className="bg-bg-card h-16 border-border border-2 rounded-2xl flex items-center justify-between px-3 hover:bg-bg-warm">
       <div className="flex items-center gap-3">

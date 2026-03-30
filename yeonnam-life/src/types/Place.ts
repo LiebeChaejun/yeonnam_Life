@@ -52,3 +52,7 @@ export type PlaceActions = {
     reset: () => void;
   };
 };
+
+export interface PlaceCardProps {
+  place: PartialPlace;
+}

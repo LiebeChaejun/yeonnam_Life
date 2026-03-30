@@ -1,11 +1,7 @@
-import type { PartialPlace } from "@/types/Place";
+import type { PlaceCardProps } from "@/types/Place";
 
 import heartActive from "../../../assets/icons/heartActive.svg";
 import star from "../../../assets/icons/star.svg";
-
-interface PlaceCardProps {
-  place: PartialPlace;
-}
 
 const PlaceCard = ({ place }: PlaceCardProps) => {
   return (
