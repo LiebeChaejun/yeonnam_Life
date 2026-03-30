@@ -46,7 +46,7 @@ export type PlaceState = {
 
 export type PlaceActions = {
   actions: {
-    setPlace: (place: PartialPlace) => void;
+    setPlace: (place: Place) => void;
     setPlaces: (places: PartialPlace[]) => void;
     setHotPlaces: (hotPlaces: Place[]) => void;
     setLoading: (loading: boolean) => void;
