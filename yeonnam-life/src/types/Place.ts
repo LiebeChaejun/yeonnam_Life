@@ -37,6 +37,7 @@ export type PartialPlace = Partial<Place>;
 export type PlaceState = {
   place: PartialPlace | null; // 단일 장소
   places: PartialPlace[]; // 목록
+  hotPlaces: PartialPlace[]; // (별점순) 인기 장소 목록
   isLoading: boolean;
   error: string | null;
 };
@@ -44,7 +45,8 @@ export type PlaceState = {
 export type PlaceActions = {
   actions: {
     setPlace: (place: PartialPlace) => void;
-    setPlaces: (courses: PartialPlace[]) => void;
+    setPlaces: (places: PartialPlace[]) => void;
+    setHotPlaces: (hotPlaces: PartialPlace[]) => void;
     setLoading: (loading: boolean) => void;
     setError: (error: string | null) => void;
     reset: () => void;
