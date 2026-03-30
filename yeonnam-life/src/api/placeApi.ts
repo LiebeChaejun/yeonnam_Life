@@ -13,7 +13,7 @@ export const getPlaceById = async (id: string) => {
 };
 
 // (별점순) place 상위 5개 불러오는 api
-export const getHotPlace = async () => {
+export const getHotPlaces = async () => {
   const { data } = await api.get("hotPlaces");
   return data;
 };
