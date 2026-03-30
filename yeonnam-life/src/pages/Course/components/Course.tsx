@@ -40,10 +40,6 @@ const Course = () => {
           {spots?.map((spot) => {
             const place = places.find((p) => p.id === spot.placeId);
 
-            console.log("spot.placeId:", spot.placeId);
-            console.log("찾은 place:", place);
-            console.log("places 전체:", places);
-
             if (!place) return null;
 
             return (
