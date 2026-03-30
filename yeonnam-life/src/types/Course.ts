@@ -22,7 +22,7 @@ export interface Course {
 type PartialCourse = Partial<Course>;
 
 export type CourseState = {
-  course: PartialCourse | null; // 단일 코스
+  course: Course; // 단일 코스
   courses: PartialCourse[]; // 목록
   isLoading: boolean;
   error: string | null;
@@ -36,4 +36,8 @@ export type CourseActions = {
     setError: (error: string | null) => void;
     reset: () => void;
   };
+};
+
+export type CourseCardProps = {
+  course: PartialCourse;
 };
