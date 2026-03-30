@@ -62,16 +62,10 @@ const Home = () => {
         </div>
         <ul className="flex gap-3 max-w-100 overflow-x-scroll">
           {courses.length !== 0 ? (
-            courses.map((item) => {
+            courses.map((course) => {
               return (
-                <Link key={item.id} to={`/courses/${item.id}`}>
-                  <CourseCard
-                    id={item.id}
-                    title={item.title}
-                    description={item.description}
-                    duration={item.duration}
-                    distance={item.distance}
-                  />
+                <Link key={course.id} to={`/courses/${course.id}`}>
+                  <CourseCard course={course} />
                 </Link>
               );
             })
