@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCourseStore } from "../../stores/useCoursesStore.ts";
 import { usePlaceStore } from "@/stores/usePlaceStore.ts";
 import { getCourses } from "../../api/courseApi.ts";
-import { getPlaces } from "@/api/placeApi.ts";
+import { getPlaces, getHotPlaces } from "@/api/placeApi.ts";
 
 import Carousel from "./components/Carousel/Carousel";
 import CourseCard from "../Course/components/CourseCard";
@@ -14,6 +14,7 @@ const Home = () => {
   const { actions: courseActions } = useCourseStore();
   const { actions: placeActions } = usePlaceStore();
   const courses = useCourseStore((state) => state.courses);
+  const hotPlaces = usePlaceStore((state) => state.hotPlaces);
 
   useEffect(() => {
     const fetch = async () => {
@@ -21,8 +22,11 @@ const Home = () => {
       try {
         const courseData = await getCourses();
         const placeData = await getPlaces();
+        const hotPlacesData = await getHotPlaces();
+
         courseActions.setCourses(courseData);
         placeActions.setPlaces(placeData);
+        placeActions.setHotPlaces(hotPlacesData);
       } catch (error) {
         courseActions.setError("코스 목록을 불러오지 못했어요.");
       } finally {
@@ -81,9 +85,9 @@ const Home = () => {
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">인기 장소🔥</h2>
         <ul className="flex flex-col gap-3">
-          <PlaceCardHome />
-          <PlaceCardHome />
-          <PlaceCardHome />
+          {hotPlaces.map((hotplace) => {
+            return <PlaceCardHome key={hotplace.id} place={hotplace} />;
+          })}
         </ul>
       </div>
     </>
