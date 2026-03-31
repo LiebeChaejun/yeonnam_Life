@@ -46,6 +46,7 @@ const Course = () => {
 
             return (
               <li
+                key={place.id}
                 className="relative flex gap-2 border-border border-2 bg-bg-card w-full px-3 py-3 rounded-2xl items-center hover:bg-bg-warm"
                 onClick={() => {
                   navigate(`/place/${place.id}`);
