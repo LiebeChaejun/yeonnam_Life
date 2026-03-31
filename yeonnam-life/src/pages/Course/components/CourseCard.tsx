@@ -22,7 +22,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
           <p className="text-sm font-light">{course.distance}</p>
         </div>
       </div>
-    </li>
+    </>
   );
 };
 
