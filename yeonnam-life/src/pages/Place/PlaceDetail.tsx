@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import CategoryBox from "../../components/Category/CategoryButton";
 import backArrow from "../../assets/icons/backArrow.svg";
 import heart from "../../assets/icons/heartInactive.svg";
@@ -6,12 +8,13 @@ import clock from "../../assets/icons/iconClockGrey.svg";
 import location from "../../assets/icons/iconLocationGray.svg";
 
 const PlaceDetail = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* 뒤로가기 버튼 */}
       <div className="flex gap-3">
-        <button>
-          <img src={backArrow} alt="" />
+        <button onClick={() => navigate(-1)}>
+          <img src={backArrow} alt="뒤로가기" />
         </button>
         <p className="font-semibold">장소 상세</p>
       </div>
