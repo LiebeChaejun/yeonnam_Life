@@ -61,17 +61,18 @@ const Home = () => {
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
         <ul className="flex gap-3 max-w-100 overflow-x-scroll">
-          {courses.length !== 0 ? (
-            courses.map((course) => {
-              return (
-                <Link key={course.id} to={`/courses/${course.id}`}>
+          {courses.map((course) => {
+            return (
+              <li key={course.id}>
+                <Link
+                  className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
+                  to={`/courses/${course.id}`}
+                >
                   <CourseCard course={course} />
                 </Link>
-              );
-            })
-          ) : (
-            <></>
-          )}
+              </li>
+            );
+          })}
         </ul>
       </div>
 
