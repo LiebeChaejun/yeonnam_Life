@@ -37,7 +37,7 @@ const PlaceDetail = () => {
 
         {/* 컨텐츠 내용 */}
         <div className="flex flex-col gap-5">
-          <h3 className="text-2xl text-text-primary">밀도</h3>
+          <h3 className="text-2xl text-text-primary font-semibold">밀도</h3>
           <p className="text-text-secondary">식빵 한 장의 행복, 연남 본점</p>
           <ul className="h-30 bg-bg-warm rounded-2xl border border-border p-2 flex flex-col gap-3">
             <li className="flex gap-1 items-center">
