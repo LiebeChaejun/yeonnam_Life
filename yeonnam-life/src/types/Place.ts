@@ -34,11 +34,9 @@ export interface Place {
   updatedAt: string;
 }
 
-export type PartialPlace = Partial<Place>;
-
 export type PlaceState = {
-  place: PartialPlace | null; // 단일 장소
-  places: PartialPlace[]; // 목록
+  place: Place | null; // 단일 장소
+  places: Place[]; // 목록
   hotPlaces: Place[]; // (별점순) 인기 장소 목록
   isLoading: boolean;
   error: string | null;
@@ -47,7 +45,7 @@ export type PlaceState = {
 export type PlaceActions = {
   actions: {
     setPlace: (place: Place) => void;
-    setPlaces: (places: PartialPlace[]) => void;
+    setPlaces: (places: Place[]) => void;
     setHotPlaces: (hotPlaces: Place[]) => void;
     setLoading: (loading: boolean) => void;
     setError: (error: string | null) => void;
