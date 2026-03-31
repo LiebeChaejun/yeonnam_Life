@@ -6,10 +6,7 @@ import iconWalking from "../../../assets/icons/iconWalkingGrey.svg";
 
 const CourseCard = ({ course }: CourseCardProps) => {
   return (
-    <li
-      className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
-      key={course.id}
-    >
+    <>
       <p className="text-3xl">☕️</p>
       <div className="flex flex-col">
         <p className="font-semibold text-base">{course.title}</p>
