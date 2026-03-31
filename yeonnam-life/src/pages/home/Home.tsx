@@ -60,20 +60,24 @@ const Home = () => {
           <h2 className="text-xl font-bold">추천 산책코스</h2>
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
-        <ul className="flex gap-3 max-w-100 overflow-x-scroll">
-          {courses.map((course) => {
-            return (
-              <li key={course.id}>
-                <Link
-                  className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
-                  to={`/courses/${course.id}`}
-                >
-                  <CourseCard course={course} />
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {courses.length !== 0 ? (
+          <ul className="flex gap-3 max-w-100 overflow-x-scroll">
+            {courses.map((course) => {
+              return (
+                <li key={course.id}>
+                  <Link
+                    className="bg-bg-card border-border border-2 min-w-70 h-45 rounded-2xl flex flex-col gap-3 px-3 py-5 hover:bg-bg-warm hover:shadow-xs"
+                    to={`/courses/${course.id}`}
+                  >
+                    <CourseCard course={course} />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <></>
+        )}
       </div>
 
       {/* 인기장소 */}

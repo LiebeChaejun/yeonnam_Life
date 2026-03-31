@@ -5,7 +5,7 @@ import star from "../../../assets/icons/star.svg";
 
 const PlaceCard = ({ place }: PlaceCardProps) => {
   return (
-    <li className="relative flex gap-2 border-border border-2 bg-bg-card w-full px-3 py-3 rounded-2xl items-center hover:bg-bg-warm">
+    <>
       {/* 이모지 */}
       <p className="w-15 h-15 bg-bg-warm text-4xl rounded-xl flex justify-center items-center">
         ☕️
@@ -42,7 +42,7 @@ const PlaceCard = ({ place }: PlaceCardProps) => {
         alt="활성화 된 하트"
         className="absolute top-4 right-4"
       />
-    </li>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCourseStore } from "../../../stores/useCoursesStore";
 import { usePlaceStore } from "@/stores/usePlaceStore";
 
@@ -10,6 +10,8 @@ const Course = () => {
   const course = useCourseStore((state) => state.course);
   const spots = useCourseStore((state) => state.course?.spots);
   const places = usePlaceStore((state) => state.places);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -43,9 +45,14 @@ const Course = () => {
             if (!place) return null;
 
             return (
-              <Link key={spot.placeId} to={`place/${spot.placeId}`}>
+              <li
+                className="relative flex gap-2 border-border border-2 bg-bg-card w-full px-3 py-3 rounded-2xl items-center hover:bg-bg-warm"
+                onClick={() => {
+                  navigate(`/place/${place.id}`);
+                }}
+              >
                 <PlaceCard place={place} />
-              </Link>
+              </li>
             );
           })}
         </ul>
