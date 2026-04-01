@@ -8,7 +8,7 @@ export const getPlaces = async () => {
 
 // place 세부정보 api
 export const getPlaceById = async (id: string) => {
-  const { data } = await api.get(`places/${id}`);
+  const { data } = await api.get(`/place/${id}`);
   return data;
 };
 
