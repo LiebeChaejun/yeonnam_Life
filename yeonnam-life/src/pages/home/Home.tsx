@@ -45,7 +45,7 @@ const Home = () => {
       {/* 카테고리 박스*/}
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">어디로 떠날까요?</h2>
-        <div className="flex gap-3 max-w-100 overflow-x-scroll">
+        <div className="flex gap-3 max-w-125 overflow-x-scroll">
           {/* 카테고리 */}
           <CategoryTag />
           <CategoryTag shop="cafe" />
@@ -61,7 +61,7 @@ const Home = () => {
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
         {courses.length !== 0 ? (
-          <ul className="flex gap-3 max-w-100 overflow-x-scroll">
+          <ul className="flex gap-3 max-w-125 overflow-x-scroll">
             {courses.map((course) => {
               return (
                 <li key={course.id}>
@@ -83,11 +83,24 @@ const Home = () => {
       {/* 인기장소 */}
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">인기 장소🔥</h2>
-        <ul className="flex flex-col gap-3">
-          {hotPlaces.map((hotPlace) => {
-            return <PlaceCardHome key={hotPlace.id} place={hotPlace} />;
-          })}
-        </ul>
+        {hotPlaces.length !== 0 ? (
+          <ul className="flex flex-col gap-3">
+            {hotPlaces.map((hotPlace) => {
+              return (
+                <li>
+                  <Link
+                    className="bg-bg-card h-16 border-border border-2 rounded-2xl flex items-center justify-between px-3 hover:bg-bg-warm"
+                    to={`place/${hotPlace.id}`}
+                  >
+                    <PlaceCardHome key={hotPlace.id} place={hotPlace} />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

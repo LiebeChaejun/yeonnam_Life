@@ -10,7 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <div className="bg-bg w-full min-h-screen flex justify-center">
-          <div className="max-w-125 min-w-100">
+          <div className="max-w-125 min-w-125">
             <div className="relative flex flex-col gap-3 px-3 py-3">
               <Routes>
                 <Route path="/" element={<Home />} />
