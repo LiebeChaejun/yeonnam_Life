@@ -86,7 +86,16 @@ const Home = () => {
         {hotPlaces.length !== 0 ? (
           <ul className="flex flex-col gap-3">
             {hotPlaces.map((hotPlace) => {
-              return <PlaceCardHome key={hotPlace.id} place={hotPlace} />;
+              return (
+                <li>
+                  <Link
+                    className="bg-bg-card h-16 border-border border-2 rounded-2xl flex items-center justify-between px-3 hover:bg-bg-warm"
+                    to={`place/${hotPlace.id}`}
+                  >
+                    <PlaceCardHome key={hotPlace.id} place={hotPlace} />
+                  </Link>
+                </li>
+              );
             })}
           </ul>
         ) : (
