@@ -83,11 +83,15 @@ const Home = () => {
       {/* 인기장소 */}
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">인기 장소🔥</h2>
-        <ul className="flex flex-col gap-3">
-          {hotPlaces.map((hotPlace) => {
-            return <PlaceCardHome key={hotPlace.id} place={hotPlace} />;
-          })}
-        </ul>
+        {hotPlaces.length !== 0 ? (
+          <ul className="flex flex-col gap-3">
+            {hotPlaces.map((hotPlace) => {
+              return <PlaceCardHome key={hotPlace.id} place={hotPlace} />;
+            })}
+          </ul>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
