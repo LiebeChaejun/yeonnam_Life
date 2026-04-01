@@ -45,7 +45,7 @@ const Home = () => {
       {/* 카테고리 박스*/}
       <div className="flex flex-col gap-3">
         <h2 className="text-xl font-bold">어디로 떠날까요?</h2>
-        <div className="flex gap-3 max-w-100 overflow-x-scroll">
+        <div className="flex gap-3 max-w-125 overflow-x-scroll">
           {/* 카테고리 */}
           <CategoryTag />
           <CategoryTag shop="cafe" />
@@ -61,7 +61,7 @@ const Home = () => {
           <button className="text-accent-warm text-sm">전체보기</button>
         </div>
         {courses.length !== 0 ? (
-          <ul className="flex gap-3 max-w-100 overflow-x-scroll">
+          <ul className="flex gap-3 max-w-125 overflow-x-scroll">
             {courses.map((course) => {
               return (
                 <li key={course.id}>
