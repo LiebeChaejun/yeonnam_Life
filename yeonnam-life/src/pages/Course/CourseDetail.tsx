@@ -37,7 +37,7 @@ const CourseDetail = () => {
       <div className="flex gap-1">
         <button
           onClick={() => {
-            navigate("/");
+            navigate(-1);
           }}
         >
           <img src={backArrow} alt="뒤로가기" />
