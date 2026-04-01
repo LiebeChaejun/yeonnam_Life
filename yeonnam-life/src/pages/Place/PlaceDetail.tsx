@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { usePlaceStore } from "@/stores/usePlaceStore";
 import { getPlaceById } from "@/api/placeApi";
 
-import CategoryBox from "../../components/Category/CategoryButton";
+import CategoryButton from "../../components/Category/CategoryButton";
 import backArrow from "../../assets/icons/backArrow.svg";
 import heart from "../../assets/icons/heartInactive.svg";
 import star from "../../assets/icons/star.svg";
@@ -57,7 +57,7 @@ const PlaceDetail = () => {
 
         {/* 카테고리 태그 */}
         <div className="py-2 text-xs flex gap-1">
-          <CategoryBox isButton={false} shop={place?.category} />
+          <CategoryButton isButton={false} shop={place?.category} />
         </div>
 
         {/* 컨텐츠 내용 */}
